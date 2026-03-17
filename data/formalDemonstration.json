@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "math": "https://mathematica.org/vocab#",
+    "geom": "https://geometry.org/vocab#"
+  },
+  "@graph": [
+    {
+      "@id": "#formalDemonstration",
+      "@type": "ScholarlyArticle",
+      "name": "Formal Demonstration of the Golden Ratio from a Given Line",
+      "description": "A structured reconstruction of the geometric derivation of φ using Euclid-inspired constructions, including an alternative to Elements II.11 and the inscription of a regular decagon.",
+      "hasPart": [
+        "#propII11_1_extended",
+        "#propIV11_1_extended"
+      ]
+    },
+
+    {
+      "@id": "#propII11_1_extended",
+      "@type": "geom:GeometricProposition",
+      "name": "Extended Proposition II.11.1",
+      "text": "To add to a given straight line a segment such that the square on the whole is equal to the rectangle contained by the sum of both lines and the added segment.",
+      "mathExpression": {
+        "@type": "math:MathExpression",
+        "name": "Proposition II.11.1 Equation",
+        "expression": "AB^2 = (AB + s) \\cdot s",
+        "encodingFormat": "application/x-latex"
+      },
+      "steps": [
+        "Let AB be the given line. We seek a segment s such that AB² equals (AB + s)·s.",
+        "Construct square ABCD on AB (Elements I.46).",
+        "Bisect AB at point Γ and draw ΓC.",
+        "Extend AB to Δ so that ΓΔ = ΓC.",
+        "Construct rectangle AΔ, ΔH such that ΔH = BΔ.",
+        "Using Elements II.6, the square of ΓB plus rectangle AΔ, ΔH equals the square of ΓΔ.",
+        "Using Elements I.47, the square of ΓC equals the square of BC plus the square of ΓB.",
+        "Since BC = AB and ΓC = ΓΔ, rectangle AΔ, ΔH equals AB².",
+        "Since AΔ = AB + s and ΔH = s, we obtain (AB + s)·s = AB².",
+        "Q.E.D."
+      ]
+    },
+
+    {
+      "@id": "#propIV11_1_extended",
+      "@type": "geom:GeometricProposition",
+      "name": "Extended Proposition IV.11.1",
+      "text": "To inscribe an equilateral and equiangular decagon in a given circle using the segment constructed in Proposition II.11.1.",
+      "steps": [
+        "Let AB be the given line, used as the radius r of circle C.",
+        "Add segment BΔ such that AB² = AΔ·ΔB, obtaining the length AΔ = AB + s.",
+        "Draw circle C with center O and radius AB.",
+        "Choose any point E on circle C.",
+        "Draw a circle with center E and radius AΔ.",
+        "Use each new intersection point with circle C as a new center to draw circles of radius AΔ.",
+        "Continue until no new intersections appear; exactly ten points are obtained.",
+        "Connect the ten points to form the decagon.",
+        "The decagon is equilateral because no additional intersections can be generated.",
+        "The decagon is equiangular because each pair of consecutive vertices and the center O form congruent isosceles triangles.",
+        "Q.E.D."
+      ]
+    }
+  ]
+}
