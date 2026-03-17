@@ -1,0 +1,168 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "math": "https://mathematica.org/vocab#",
+    "geom": "https://geometry.org/vocab#"
+  },
+  "@graph": [
+    {
+      "@id": "#goldenRatioDiscovery",
+      "@type": "ScholarlyArticle",
+      "name": "The Golden Ratio in the Shadow of the Icosahedron",
+      "author": {
+        "@type": "Person",
+        "name": "D.David Peláez Guirad"
+      },
+      "datePublished": "2026-03-17",
+      "abstract": "A novel geometric discovery demonstrating that the ratio between the second diagonal of a regular decagon and the radius of its circumscribed circle is the golden ratio (φ).",
+      "mainEntity": "#mainClaim",
+      "hasPart": [
+        "#intuitivePhiDefinition",
+        "#applications",
+        "#educationalValue",
+        "#historicalContext"
+      ],
+      "citation": "#euclidesElements"
+    },
+    {
+      "@id": "#mainClaim",
+      "@type": "Claim",
+      "name": "Phi as the ratio of a decagon's second diagonal to its radius",
+      "description": "The length of the second diagonal of a regular decagon (d) in relation to the radius (r) of the circle in which it is inscribed is the golden ratio (φ).",
+      "mathExpression": "#phiDefinition"
+    },
+    {
+      "@id": "#phiDefinition",
+      "@type": "math:MathExpression",
+      "name": "Core Definition of Phi",
+      "expression": "\\phi = \\frac{d}{r}",
+      "encodingFormat": "application/x-latex"
+    },
+    {
+      "@id": "#quickProof",
+      "@type": "Proof",
+      "name": "Quick Trigonometric Proof",
+      "supportsClaim": "#mainClaim",
+      "hasPart": [
+        {
+          "@type": "math:MathExpression",
+          "name": "Angle EOH",
+          "expression": "\\angle EOH = 3 \\times \\frac{2\\pi}{10} = \\frac{3\\pi}{5}",
+          "encodingFormat": "application/x-latex"
+        },
+        {
+          "@type": "math:MathExpression",
+          "name": "Angle OEH",
+          "expression": "\\angle OEH = \\pi - (\\angle OHE + \\angle EOH) = \\pi - (\\frac{\\pi}{5} + \\frac{3\\pi}{5}) = \\frac{\\pi}{5}",
+          "encodingFormat": "application/x-latex"
+        },
+        {
+          "@type": "math:MathExpression",
+          "name": "Cosine relation",
+          "expression": "\\cos(\\frac{\\pi}{5}) = \\frac{d/2}{r}",
+          "encodingFormat": "application/x-latex"
+        },
+        {
+          "@type": "math:MathExpression",
+          "name": "Final derivation",
+          "expression": "d = 2r\\cos(\\frac{\\pi}{5}) = \\phi r \\implies \\frac{d}{r} = \\phi",
+          "encodingFormat": "application/x-latex"
+        }
+      ]
+    },
+    {
+      "@id": "#formalProof",
+      "@type": "Proof",
+      "name": "Formal Geometric Proof",
+      "description": "An alternative to Euclid's Elements II.11, constructing phi by extending a line, which is then used to inscribe a decagon.",
+      "hasPart": [
+        {
+          "@id": "#propII11_1",
+          "@type": "geom:GeometricProposition",
+          "name": "Proposition II.11.1 (Alternative)",
+          "text": "To add to a given straight line a segment such that the square on the whole is equal to the rectangle contained by the sum of both lines and the added segment.",
+          "mathExpression": {
+            "@type": "math:MathExpression",
+            "name": "Proposition II.11.1 Equation",
+            "expression": "AB^2 = (AB+s) \\cdot s",
+            "encodingFormat": "application/x-latex"
+          }
+        },
+        {
+          "@id": "#propIV11_1",
+          "@type": "geom:GeometricProposition",
+          "name": "Proposition IV.11.1 (Decagon Inscription)",
+          "text": "To inscribe an equilateral and equiangular decagon in a given circle with a given radius, using the length d = φr constructed via Proposition II.11.1.",
+          "method": "Draw a circle with radius r. Construct a segment of length d = φr using Proposition II.11.1. From a point on the circle, use a compass with radius d to mark successive intersections around the circumference. Connect the ten resulting points."
+        }
+      ],
+      "supportsClaim": "#mainClaim"
+    },
+    {
+      "@id": "#applications",
+      "@type": "BreadcrumbList",
+      "name": "Applications of the Discovery",
+      "itemListElement": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "3D Graphics Optimization",
+          "applicationCategory": "3D Graphics Algorithm",
+          "description": "This discovery offers the possibility of developing algorithms that optimize the calculation and rendering of polygons in 3D graphics programs. This can lead to significant improvements in the efficiency and visual quality of 3D representations used in fields such as animation, video games, and simulation.",
+          "isBasedOn": "#mainClaim"
+        },
+        {
+          "@id": "#icosahedronApplication",
+          "@type": "SoftwareApplication",
+          "name": "Icosahedron Edge Calculation",
+          "applicationCategory": "3D Graphics Algorithm",
+          "description": "Using the relationship between φ and the decagon to calculate the edge length (L) of an icosahedron from its circumradius (r).",
+          "isBasedOn": "#mainClaim",
+          "hasPart": {
+            "@type": "math:MathExpression",
+            "name": "Icosahedron Edge Length Formula",
+            "expression": "L = \\frac{2r}{\\sqrt{\\phi^2 + 1}}",
+            "encodingFormat": "application/x-latex"
+          },
+          "disambiguatingDescription": "From this expression, it is deduced that the radius of the icosahedron is always slightly greater than any of its edges. The L/r ratio is approximately 0.89. We speculate this is the reason Euclid referred to the side of the icosahedron as 'the lesser' in proposition 16 of Book XIII of the Elements."
+        }
+      ]
+    },
+    {
+      "@id": "#intuitivePhiDefinition",
+      "@type": "DefinedTerm",
+      "name": "More Intuitive Definition of Phi",
+      "description": "The relationship between the second diagonal of a regular decagon and the radius of the circle in which it is inscribed provides a way to approach φ similar to the definition of π and therefore simpler to remember. We recall that the golden ratio was created by Euclid as a tool to be able to construct polygons like the pentagon and the two most complex Platonic solids, the dodecahedron and the icosahedron. By using this definition, we get closer to the essence of φ that underlies these three-dimensional structures."
+    },
+    {
+      "@id": "#educationalValue",
+      "@type": "EducationalAudience",
+      "name": "Educational and Creative Applications",
+      "description": "The use of formal proofs and geometric constructions in the discovery fosters the development of mathematical reasoning in students. It allows them to explore and justify the relationships between different geometric and trigonometric elements, promoting critical and analytical thinking. Encouraging students to immerse themselves in the world of geometry, as by drawing and without arithmetic operations, new relationships between elements can be found.",
+      "example": {
+        "@type": "CreativeWork",
+        "name": "The Aeris Spiral",
+        "description": "As an example, using this new relationship between the second diagonal of a decagon and the radius, we have created a new golden spiral which we have called the Aeris spiral in honor of our daughter. The arcs obtained with this method continue to maintain a golden ratio between them: arc_{n+1} / arc_n = φ."
+      }
+    },
+    {
+      "@id": "#historicalContext",
+      "@type": "Thing",
+      "name": "Historical Context and Artistic Relevance",
+      "description": "The knowledge of the golden ratio (φ) has been used in art and design for centuries to create visually appealing and harmonious compositions. Through the use of this discovery, students can experiment with golden proportions and apply them in their own artistic creations."
+    },
+{
+  "@id": "#euclidesElements",
+  "@type": "Book",
+  "name": "Los Elementos de Euclides",
+  "author": {
+    "@type": "Person",
+    "name": "Euclides"
+  },
+  "datePublished": "2005",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Ed. Gredos"
+  },
+  "isbn": "8424915635"
+}
+
