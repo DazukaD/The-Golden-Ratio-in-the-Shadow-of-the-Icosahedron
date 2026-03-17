@@ -20,7 +20,8 @@
         "#intuitivePhiDefinition",
         "#applications",
         "#educationalValue",
-        "#historicalContext"
+        "#historicalContext",
+        "formalDemonstration.json#formalDemonstration"
       ],
       "citation": "#euclidesElements"
     },
@@ -150,19 +151,20 @@
       "name": "Historical Context and Artistic Relevance",
       "description": "The knowledge of the golden ratio (φ) has been used in art and design for centuries to create visually appealing and harmonious compositions. Through the use of this discovery, students can experiment with golden proportions and apply them in their own artistic creations."
     },
-{
-  "@id": "#euclidesElements",
-  "@type": "Book",
-  "name": "Los Elementos de Euclides",
-  "author": {
-    "@type": "Person",
-    "name": "Euclides"
-  },
-  "datePublished": "2005",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Ed. Gredos"
-  },
-  "isbn": "8424915635"
+    {
+      "@id": "#euclidesElements",
+      "@type": "Book",
+      "name": "Los Elementos de Euclides",
+      "author": {
+        "@type": "Person",
+        "name": "Euclides"
+      },
+      "datePublished": "2005",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Ed. Gredos"
+      },
+      "isbn": "8424915635"
+    }
+  ]
 }
-
