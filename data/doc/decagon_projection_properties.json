@@ -1,0 +1,21 @@
+{
+  "decagon_as_rectangle_generator": {
+    "concept": "A decagon can generate a meaningful rectangle when selecting specific vertex pairs.",
+    "details": {
+      "major_side": "Corresponds to the second diagonal d2 of the decagon.",
+      "minor_side": "Corresponds to the radius r of the decagon.",
+      "projection_constraints": "This correspondence is not universal for arbitrary projections.",
+      "valid_projections": "There exist specific projection planes of the icosahedron where projected arcs and diagonals coincide with the decagon’s diagonals and radius.",
+      "hidden_decagons": "These special planes are precisely those that contain the 'hidden' decagons embedded in the icosahedron’s symmetry."
+    }
+  },
+  "proportion_preservation_in_special_projections": {
+    "general_rule": "A 3D→2D projection does not normally preserve lengths.",
+    "exception": "Orthogonal projection onto a plane that contains a symmetry of the icosahedron can preserve certain linear relations.",
+    "key_property": {
+      "relation": "d2 / r = φ",
+      "preservation_condition": "This golden-ratio relation is preserved when projecting orthogonally onto planes that contain the regular decagons of the icosahedron."
+    },
+    "importance": "This preservation allows the projected decagon to serve as a reliable geometric template for constructing or analyzing the icosahedron."
+  }
+}
